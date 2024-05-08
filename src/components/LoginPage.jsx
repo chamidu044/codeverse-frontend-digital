@@ -166,7 +166,7 @@ const LoginPage = () => {
 
         {error && <div className={`${styles.paragraph} text-red-500 mt-4`}>{error}</div>}
         <p className={`${styles.paragraph} mt-4 text-white`}>
-          Don't have an account? <a href="/signup" className="text-purple-800">Sign up</a>
+          Don't have an account? <Link to="/signup" className="text-purple-800">Sign up</Link>
         </p>
       </div>
 

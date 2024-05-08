@@ -196,9 +196,9 @@ const UploadImageForm = () => {
                     </p>
                       <p className="text-m text-gray-400 ">
                         Don't have an account?{" "}
-                        <a href="/signup" className="underline hover:text-purple-600">
+                        <Link to="/signup" className="underline hover:text-purple-600">
                           <span className="">Sign up here</span>
-                        </a>
+                        </Link>
                       </p>
                 </div>
                 )}
