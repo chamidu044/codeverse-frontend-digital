@@ -3,6 +3,8 @@ import { auth } from "./firebase";
 import { close, menu } from "../assets";
 import { navLinks } from "../constants";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   // State variables to manage active link and toggle for mobile view menu

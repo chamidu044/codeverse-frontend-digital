@@ -3,6 +3,8 @@ import { auth } from "./firebase"; // Import Firebase authentication module
 import { useAuthState } from "react-firebase-hooks/auth"; // Import hook for Firebase authentication state
 import { useNavigate } from "react-router-dom"; // Import hook for navigation
 import styles from "../style"; // Import Tailwind CSS styles
+import { Link } from 'react-router-dom';
+
 
 // SignupPage Component
 const SignupPage = () => {
@@ -103,7 +105,7 @@ const SignupPage = () => {
           {error && <div className={`${styles.paragraph} text-red-500 mt-4`}>{error}</div>}
           {/* Login link */}
           <p className={`${styles.paragraph} mt-4 text-purple`}>
-            Already have an account? <a href="/login" className="text-secondary">Login</a>
+            Already have an account? <Link to="/login" className="text-secondary">Login</Link>
           </p>
         </div>
       </div>

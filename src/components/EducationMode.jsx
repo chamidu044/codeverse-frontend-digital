@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header.jsx'; // Importing Header component
 import styles from '../style.js'; // Importing styles
 
+
 // EducationMode component
 const EducationMode = () => {
   // State variables

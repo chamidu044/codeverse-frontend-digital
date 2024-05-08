@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "../style";
 import { GoogleAuthProvider } from "firebase/auth"; // Import Google authentication provider from Firebase
 import GoogleLogo from '../Google.svg';
+import { Link } from 'react-router-dom';
+
 
 // Define the Login Page component
 const LoginPage = () => {
