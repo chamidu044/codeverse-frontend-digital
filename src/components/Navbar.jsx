@@ -46,13 +46,13 @@ const Navbar = () => {
             className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite"
             onClick={handleLogout}
           >
-            <a href="#logout">Logout</a>
+            <Link to="#logout">Logout</Link>
           </li>
         ) : (
           <li
             className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite"
           >
-            <a href="/login">Login</a>
+            <Link to="/login">Login</Link>
           </li>
         )}
       </ul>
