@@ -90,7 +90,7 @@ const Navbar = () => {
                 className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite"
                 onClick={handleLogout}
               >
-                <a href="#logout">Logout</a>
+                <Link to="#logout">Logout</Link>
               </li>
             ) : (
               <li
