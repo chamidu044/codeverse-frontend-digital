@@ -2,7 +2,7 @@ const html_code = document.querySelector('.html-code textarea');
 const result = document.querySelector('#result');
 
 // Fetch data from Flask route
-fetch('https://flask-backend-codeverse.azurewebsites.net/me')
+fetch('https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/me')
     .then(response => response.json())
     .then(data => {
         // Clear existing HTML content

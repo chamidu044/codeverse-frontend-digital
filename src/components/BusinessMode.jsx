@@ -19,7 +19,7 @@ const BusinessMode = () => {
     }
 
     try {
-      const response = await fetch('https://flask-backend-codeverse.azurewebsites.net/business');
+      const response = await fetch('https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/business');
       if (!response.ok) {
         throw new Error('Failed to fetch code');
       }
@@ -69,7 +69,7 @@ const BusinessMode = () => {
     const userInput = document.getElementById('userInput').value;
 
     try {
-      const response = await fetch('https://flask-backend-codeverse.azurewebsites.net/userinput', {
+      const response = await fetch('https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/userinput', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const BusinessMode = () => {
 
       console.log('Data sent successfully');
 
-      const codeResponse = await fetch('https://flask-backend-codeverse.azurewebsites.net/business');
+      const codeResponse = await fetch('https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/business');
       if (!codeResponse.ok) {
         throw new Error('Failed to fetch code');
       }

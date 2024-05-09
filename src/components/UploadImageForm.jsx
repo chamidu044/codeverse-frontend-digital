@@ -52,7 +52,7 @@ const UploadImageForm = () => {
     data.append("file", image);
 
     // Post image data to the server
-    axios.post("https://flask-backend-codeverse.azurewebsites.net/upload", data)
+    axios.post("https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/upload", data)
       .then((response) => {
         if (response.status === 201) {
           setResponseMsg({

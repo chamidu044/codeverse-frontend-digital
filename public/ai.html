@@ -212,7 +212,7 @@
             $("#chatbox").append(userHtml);
             document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
     
-            $.get("https://flask-backend-codeverse.azurewebsites.net/get", {
+            $.get("https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/get", {
                 msg: rawText,
             }).done(function (data) {
                 var formattedData = formatBotResponse(data);
