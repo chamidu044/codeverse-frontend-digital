@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import styles from "./style"; // Importing styles for component styling
-
+import { Analytics } from "@vercel/analytics/react"
 // Importing individual components from the "./components" directory
 import {
   Navbar,
@@ -42,6 +42,7 @@ const App = () => (
                 <Testimonials/> 
                 <Services/> 
                 <Footer/> 
+                <Analytics/>
               </div>
             </div>
           }
