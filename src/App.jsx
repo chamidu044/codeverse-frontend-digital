@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import styles from "./style"; // Importing styles for component styling
 import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
-// Importing individual components from the "./components" directory
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import {
   Navbar,
   Hero,
