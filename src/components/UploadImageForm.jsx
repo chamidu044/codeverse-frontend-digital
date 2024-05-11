@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styles, { layout } from "../style";
+import styles, { layout, mobile } from "../style";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";  // Make sure to import your Firebase configuration file
 
@@ -33,24 +33,46 @@ const UploadImageForm = () => {
     }
   }, [responseMsg, user]);
 
-  // Handler for image file change
-  const handleChange = (e) => {
-    const file = e.target.files[0];
-    fileValidate(file);
+// Handler for image file change
+const handleChange = (e) => {
+  const file = e.target.files[0];
+  if (fileValidate(file)) {
     setImage(file);
     setShowButtons(false);
     setEducationMode(false);
     setBusinessMode(false);
-  };
+    // Reset error message when valid image is selected
+    setResponseMsg({
+      ...responseMsg,
+      error: "",
+    });
+  } else {
+    // If file type is not allowed, reset image state and show error message
+    setImage(null);
+    setResponseMsg({
+      ...responseMsg,
+      error: "File type allowed only png ",
+    });
+  }
+};
+
+
+
 
   // Handler for form submission
   const submitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
+    // Check if image is selected and its type is allowed
+    if (!image || !fileValidate(image)) {
+      setLoading(false);
+      return; // Exit function if file type is not allowed
+    }
+  
     const data = new FormData();
     data.append("file", image);
-
+  
     // Post image data to the server
     axios.post("https://codeverse-backend-w4o3yqxq3a-uc.a.run.app/upload", data)
       .then((response) => {
@@ -64,7 +86,7 @@ const UploadImageForm = () => {
             setResponseMsg({});
             setLoading(false);
           }, 1000);
-
+  
           // Reset form after successful upload
           document.querySelector("#Upload").reset();
         }
@@ -80,14 +102,13 @@ const UploadImageForm = () => {
         setLoading(false);
       });
   };
+  
 
   // Validate file type
   const fileValidate = (file) => {
     if (
       file && (
-        file.type === "image/png" ||
-        file.type === "image/jpg" ||
-        file.type === "image/jpeg"
+        file.type === "image/png" 
       )
     ) {
       setResponseMsg({
@@ -96,7 +117,7 @@ const UploadImageForm = () => {
       return true;
     } else {
       setResponseMsg({
-        error: "File type allowed only jpg, png, jpeg",
+        error: "File type allowed only png ",
       });
       return false;
     }
@@ -210,22 +231,24 @@ const UploadImageForm = () => {
 
 
           {/* Mode Buttons */}
-          {showButtons && (
-            <div className="mt-6 space-x-4 max-w-full">
-              <button
-                onClick={handleEducationMode}
-                className="bg-purple-500 hover:bg-purple-600 text-white py-4 px-6 rounded-md"
-              >
-                Education Mode
-              </button>
-              <button
-                onClick={handleBusinessMode}
-                className="bg-purple-500 hover:bg-purple-600 text-white py-4 px-6 rounded-md"
-              >
-                Business Mode
-              </button>
-            </div>
-          )}
+          <div className={`${layout.section} ${mobile.container} relative`}>
+            {showButtons && (
+              <div className="mt-6 space-x-4  space-y-3 max-w-full">
+                <button
+                  onClick={handleEducationMode}
+                  className="bg-purple-500 hover:bg-purple-600 text-white py-4 px-6 rounded-md"
+                >
+                  Education Mode
+                </button>
+                <button
+                  onClick={handleBusinessMode}
+                  className="bg-purple-500 hover:bg-purple-600 text-white py-4 px-6 rounded-md"
+                >
+                  Business Mode
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

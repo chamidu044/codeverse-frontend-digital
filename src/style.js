@@ -23,6 +23,9 @@ const styles = {
 
 };
 
+export const mobile = {
+  container: "md:h-auto", // Adjust the container height for smaller screens
+};
 
 export const layout = {
   section: `flex md:flex-row flex-col ${styles.paddingY}`,

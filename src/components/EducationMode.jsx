@@ -84,14 +84,17 @@ const EducationMode = () => {
     <div className={`bg-primary ${styles.paddingX} ${styles.flexTop}`}>
       <div className={`${styles.boxWidth}`}></div>
       <div className="absolute z-[0] w-[50%] h-[50%] right-0 top-10 blue__gradient" />
-      <div className="absolute z-[0] w-[50%] h-[50%] bottom-40 pink__gradient" />
+      <div className="absolute z-[1] w-[50%] h-[20%] bottom-3 pink__gradient" />
+
       <Header /> {/* Rendering Header component */}
 
       {/* Button container for Code Explainer */}
+      
       <div className={`absolute z-10 top-20 py-5 right-20 ${styles.marginX} ${styles.flexStart}`}>
         <button onClick={toggleAiHtml} className="bg-purple-500 hover:bg-purple-800 hover:text-gray-100 text-white px-4 py-2 m-2 rounded">
           Code Explainer
         </button>
+
       </div>
 
       {/* Buttons Container for Download and Copy */}
@@ -137,6 +140,7 @@ const EducationMode = () => {
         ></iframe>
       )}
     </div>
+
   );
 };
 

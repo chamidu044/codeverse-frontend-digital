@@ -14,7 +14,7 @@ const ServiceTeam = () => {
             <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 mb-8 ${styles.flexCenter}`}>
                 <div className="team-item p-6 rounded-lg shadow-md">
                     <img
-                    src="Chamidu.PNG"
+                    src="chamidu.webp"
                     className="team-image w-full mb-4 rounded-md"
                     alt="pic"
                     />
@@ -30,7 +30,7 @@ const ServiceTeam = () => {
             <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 mb-8 ${styles.flexCenter}`}>
                 <div className="team-item p-6 rounded-lg shadow-md">
                     <img
-                    src="Eshan.png"
+                    src="eshan.webp"
                     className="team-image w-full mb-4 rounded-md"
                     alt="pic"
                     />
@@ -46,7 +46,7 @@ const ServiceTeam = () => {
             <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 mb-8 ${styles.flexCenter}`}>
                 <div className="team-item p-6 rounded-lg shadow-md">
                     <img
-                    src="Dasun.png"
+                    src="dasun.webp"
                     className="team-image w-full mb-4 rounded-md"
                     alt="pic"
                     />
@@ -63,7 +63,7 @@ const ServiceTeam = () => {
             <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 mb-8 ${styles.flexCenter}`}>
                 <div className="team-item p-6 rounded-lg shadow-md">
                     <img
-                    src="Malith.png"
+                    src="malith.webp"
                     className="team-image w-full mb-4 rounded-md"
                     alt="pic"
                     />
@@ -79,7 +79,7 @@ const ServiceTeam = () => {
             <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 mb-8 ${styles.flexCenter}`}>
                 <div className="team-item p-6 rounded-lg shadow-md">
                     <img
-                    src="Ayani.png"
+                    src="ayani.webp"
                     className="team-image w-full mb-4 rounded-md"
                     alt="pic"
                     />

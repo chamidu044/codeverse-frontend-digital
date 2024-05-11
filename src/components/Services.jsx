@@ -45,13 +45,6 @@ function Services() {
       
 
         </p>
-      
-
-      
-
-
-        
-    
     </section>
     </div>
   );

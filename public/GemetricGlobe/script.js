@@ -20,10 +20,7 @@
 
         dark = 'rgba(35,55,70,1)';
         light = 'rgba(167,175,181,1)';
-        gold = 'rgba(141,116,75,1)';
-
-
-
+        gold = 'rgba(160,32,240,1)';
         // Boring setup
         points = [];
 
@@ -61,6 +58,7 @@
             points[i].offset = getRandomInt(100, 1000);
         }
 
+        
   //group up and choose your partner
         points[0].jointo.push(points[1], points[2], points[3]);
         points[1].jointo.push(points[4], points[2], points[5]);
