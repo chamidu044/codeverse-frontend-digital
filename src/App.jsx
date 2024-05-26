@@ -6,10 +6,9 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 import {
   Navbar,
   Hero,
-  Business,
+  Mode,
   Testimonials,
   Footer,
-  Education,
   EducationMode,
   BusinessMode,
   UploadImageForm,
@@ -17,6 +16,8 @@ import {
   ServiceTeam,
   LoginPage,
   SignupPage,
+  BusinessLanding,
+  EducationLanding
 } from "./components";
 
 // Main App component
@@ -36,9 +37,8 @@ const App = () => (
                 {/* Components rendered on the homepage */}
                 <Navbar/>
                 <Hero/> 
-                <Education/> 
-                <Business/> 
-                <UploadImageForm/> 
+                <Mode/> 
+                {/* <UploadImageForm/>  */}
                 <Testimonials/> 
                 <Services/> 
                 <Footer/> 
@@ -54,6 +54,10 @@ const App = () => (
         <Route path="/serviceteam" element={<ServiceTeam />} /> 
         <Route path="/login" element={<LoginPage />} /> 
         <Route path="/signup" element={<SignupPage />} /> 
+        <Route path="/BusinessLanding" element={<BusinessLanding />} /> 
+        <Route path="/EducationLanding" element={<EducationLanding />} /> 
+
+
       </Routes>
     </div>
   </Router>
