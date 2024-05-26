@@ -15,12 +15,17 @@ const styles = {
   marginX: "sm:mx-16 mx-6",
   marginY: "sm:my-16 my-6",
 
-    container: "relative w-full h-full",
-  padding: "sm:px-16 px-6 sm:py-16 py-6",
+  container: "relative w-full h-full",
   box: "w-[20px] h-[20px] border-[1px] border-transparent",
 
-  videoBackground: "absolute top-0 left-0 object-cover w-full h-full"
+  videoBackground: "absolute top-0 left-0 object-cover w-full h-full",
 
+  // New styles from App.css
+  
+  editorContainer: "flex flex-row w-full h9% my-24 bg-black font-white",
+  editor: "flex-1 m-2 bg-fuchsia-900",
+  preview: "flex-1 m-2 bg-fuchsia-900",
+  iframe: "w-full h-[400px] border border-gray-300 bg-white",
 };
 
 export const mobile = {

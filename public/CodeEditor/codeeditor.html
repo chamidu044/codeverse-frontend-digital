@@ -7,20 +7,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Live Code Editor</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="code-editor">
-        <div class="code">
-            <div class="html-code">
-                <h1><img src="images/html.png" alt="">HTML</h1>
-                <textarea></textarea>
-            </div>
-        </div>
-        <iframe id="result"></iframe>
+    <h1>My Embedded CodePen Editor with Custom Output</h1>
+    <!-- CodePen Embed Code -->
+    <p class="codepen" data-height="800" data-theme-id="dark" data-default-tab="html,result" data-editable="true" data-user="Eshan-Amarasekara" data-slug-hash="mdYrGrK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Walkers - How to">
+        <span>See the Pen <a href="https://codepen.io/Eshan-Amarasekara/pen/mdYrGrK">
+        Walkers - How to</a> by Eshan Amarasekara (<a href="https://codepen.io/Eshan-Amarasekara">@Eshan-Amarasekara</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    <!-- Custom Result Area -->
+    <div id="custom-result" style="display:none;">
+        <h2>Custom Result Area</h2>
+        <p>This is your custom result content.</p>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Wait until the CodePen embed script is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to replace iframe content
+            function replaceIframeContent() {
+                const iframe = document.querySelector('.codepen iframe');
+                if (iframe) {
+                    iframe.onload = function() {
+                        const customResult = document.getElementById('custom-result').innerHTML;
+                        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                        iframeDocument.open();
+                        iframeDocument.write(customResult);
+                        iframeDocument.close();
+                    };
+                } else {
+                    console.error('CodePen iframe not found.');
+                }
+            }
+
+            // Retry until the iframe is found
+            function tryReplaceIframeContent() {
+                const iframe = document.querySelector('.codepen iframe');
+                if (iframe) {
+                    replaceIframeContent();
+                } else {
+                    setTimeout(tryReplaceIframeContent, 100); // Retry after 100ms
+                }
+            }
+
+            // Call the function to replace iframe content
+            tryReplaceIframeContent();
+        });
+    </script>
 </body>
 
 </html>
