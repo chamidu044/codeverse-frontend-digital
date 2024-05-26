@@ -15,6 +15,7 @@ const EducationMode = () => {
       .then(data => {
         const htmlString = data.me.join('\n');
         setCode(htmlString);
+        setHtml(htmlString); // Set the initial HTML content
       })
       .catch(error => console.error('Error fetching HTML code:', error));
   }, []);
@@ -69,29 +70,27 @@ const EducationMode = () => {
     }
   };
 
-  const handleHtmlChange = newValue => setHtml(newValue);
+  const handleHtmlChange = htmlString => setHtml(htmlString);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const iframe = document.getElementById('output');
-      if (iframe) {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        const documentContents = `
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-          </head>
-          <body>
-            ${html}
-          </body>
-          </html>
-        `;
-        doc.open();
-        doc.write(documentContents);
-        doc.close();
-      } else {
-        console.error('Iframe not found');
-      }
+    const iframe = document.getElementById('output');
+    if (iframe) {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      const documentContents = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        </head>
+        <body>
+          ${html}
+        </body>
+        </html>
+      `;
+      doc.open();
+      doc.write(documentContents);
+      doc.close();
+    } else {
+      console.error('Iframe not found');
     }
   }, [html]);
 
@@ -120,8 +119,6 @@ const EducationMode = () => {
           Copy Code
         </button>
       </div>
-
-      
 
       <div className={styles.editorContainer}>
         <div className={styles.editor}>

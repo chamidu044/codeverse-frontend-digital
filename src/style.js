@@ -22,10 +22,11 @@ const styles = {
 
   // New styles from App.css
   
-  editorContainer: "flex flex-row w-full h9% my-24 bg-black font-white",
-  editor: "flex-1 m-2 bg-fuchsia-900",
-  preview: "flex-1 m-2 bg-fuchsia-900",
-  iframe: "w-full h-[400px] border border-gray-300 bg-white",
+  editorContainer: "flex flex-col md:flex-row w-full h-full my-24 bg-black font-white", /* Change to flex-col for mobile */
+editor: "flex-1 m-2 bg-fuchsia-900", /* Adjusted width */
+preview: "flex-1 m-2 bg-fuchsia-900", /* Adjusted width */
+iframe: "w-full h-[80vh] border border-gray-300 bg-white", /* Change height for mobile */
+
 };
 
 export const mobile = {
