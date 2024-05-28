@@ -11,13 +11,12 @@ module.exports = {
         color4: "#42374E",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
+        'secondary-dark': '#4b5563',
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
-      
     },
-    
     screens: {
       xs: "480px",
       ss: "620px",
